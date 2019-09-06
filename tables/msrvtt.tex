@@ -1,0 +1,33 @@
+\begin{table*}[t]
+\centering 
+\footnotesize 
+% \setlength{\tabcolsep}{2pt}
+\begin{tabular}{l | c | c c c c c |@{\hskip -0.2cm}c@{\hskip -0.35cm}c@{\hskip -0.35cm}c@{\hskip -0.1cm}c@{\hskip -0.2cm}c} 
+\hline \hline
+\multicolumn{2}{c}{} & 
+\multicolumn{5}{c}{Text $\implies$ Video} & \multicolumn{5}{c}{Video $\implies$ Text} \\
+Method  & R$@$1 & R$@$5 & R$@$10 & MdR & MnR & R$@$1 & R$@$5 & R$@$10 & MdR & MnR \\ 
+\hline 
+% \textbf{HOI}  & 1k-B & $\prepad \mathbf{00.0}_{\pm0.0}$  & $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepadmini \mathbf{0}_{\pm0}$ & $\prepad \mathbf{0.0}_{\pm0.0}$ & $\prepad \mathbf{00.0}_{\pm0.0}$ & $\prepad \mathbf{00.0}_{\pm0.0}$  & $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepadmini \mathbf{0}_{\pm0}$ & $\prepad \mathbf{0.0}_{\pm0.0}$ \\
+% \textbf{AHOI}  & 1k-B & $\prepad \mathbf{00.0}_{\pm0.0}$  & $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepadmini \mathbf{0}_{\pm0}$ & $\prepad \mathbf{0.0}_{\pm0.0}$ & $\prepad \mathbf{00.0}_{\pm0.0}$ & $\prepad \mathbf{00.0}_{\pm0.0}$  & $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepadmini \mathbf{0}_{\pm0}$ & $\prepad \mathbf{0.0}_{\pm0.0}$ \\
+\hline 
+VSE  & 5.0 & 16.4 & 24.6 & 47 & 215.1 & 7.7 & 20.3 & 31.2 & 28 & 185.8\\
+VSE++ & 5.7 & 17.1 & 24.8 & 65 & 300.8 & 10.2 & 25.4 & 35.1 & 25 & 228.1 \\
+Mithun et al. &  7.0 & 20.9 & 29.7 & 38 & 213.8  & 12.5 & 32.1 & 42.4 & 16 & 134.0 \\
+W2VV & 6.1 & 18.7 & 27.5 & 45 & - &  11.8 & 28.9 & 39.1 & 21 & -  \\  
+Dual Encoding & 7.7 & 22.0 & 31.8 & 32 & - &  13.0 & 30.8 & 43.3 & 15 & - \\
+\textbf{CE}  & $\prepad \mathbf{22.5}_{\pm0.1}$ & $\prepad \mathbf{52.1}_{\pm0.2}$ & $\prepad \mathbf{65.5}_{\pm0.1}$ & $\prepadmini \mathbf{5}_{\pm0}$ & $\quad \mathbf{22.5}_{\pm0.1}$ & $\quad \mathbf{34.4}_{\pm0.4}$ & $\prepad \mathbf{64.6}_{\pm0.3}$ & $\prepad \mathbf{77.0}_{\pm0.4}$ & $\prepadmini \mathbf{3}_{\pm0}$ & $\prepad \mathbf{13.2}_{\pm0.6}$ \\
+CME-pairwise & $\prepad 23.2_{\pm0.2}$ & $\prepad 54.7_{\pm0.3}$ & $\prepad 68.8_{\pm0.3}$ & $\prepad 4.7_{\pm0.6}$ & $\prepad 17.1_{\pm0.1}$ & $\prepad 32.5_{\pm0.4}$ & $\prepad 67.5_{\pm0.4}$ & $\prepad 80.1_{\pm0.2}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.7_{\pm0.4}$ \\
+CME-pairwise-star & $\prepad 22.9_{\pm0.3}$ & $\prepad 54.3_{\pm0.3}$ & $\prepad 68.6_{\pm0.3}$ & $\prepad 5.0_{\pm0.0}$ & $\prepad 17.2_{\pm0.1}$ & $\prepad 33.4_{\pm0.5}$ & $\prepad 67.9_{\pm0.2}$ & $\prepad 80.1_{\pm0.6}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.6_{\pm0.3}$ \\
+CMF-pairwise-star-tensor & $\prepad 23.0_{\pm0.1}$ & $\prepad 54.5_{\pm0.3}$ & $\prepad 68.6_{\pm0.3}$ & $\prepad 4.7_{\pm0.6}$ & $\prepad 17.2_{\pm0.2}$ & $\prepad 33.2_{\pm0.6}$ & $\prepad 68.2_{\pm1.1}$ & $\prepad 80.6_{\pm0.7}$ & $\prepad 2.8_{\pm0.3}$ & $\prepad 9.5_{\pm0.2}$ \\
+CME-pairwise-star-specific & $\prepad 22.9_{\pm0.1}$ & $\prepad 54.4_{\pm0.4}$ & $\prepad 68.8_{\pm0.1}$ & $\prepad 4.7_{\pm0.6}$ & $\prepad 17.1_{\pm0.1}$ & $\prepad 33.6_{\pm1.1}$ & $\prepad 67.4_{\pm0.3}$ & $\prepad 79.7_{\pm0.4}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.8_{\pm0.4}$ \\
+% \textbf{HOI}  & Full & $\prepad \mathbf{00.0}_{\pm0.0}$  & $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepadmini \mathbf{0}_{\pm0}$ & $\prepad \mathbf{0.0}_{\pm0.0}$ & $\prepad \mathbf{00.0}_{\pm0.0}$ & $\prepad \mathbf{00.0}_{\pm0.0}$  & $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepadmini \mathbf{0}_{\pm0}$ & $\prepad \mathbf{0.0}_{\pm0.0}$ \\
+% \textbf{AHOI}  & Full & $\prepad \mathbf{00.0}_{\pm0.0}$  & $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepadmini \mathbf{0}_{\pm0}$ & $\prepad \mathbf{0.0}_{\pm0.0}$ & $\prepad \mathbf{00.0}_{\pm0.0}$ & $\prepad \mathbf{00.0}_{\pm0.0}$  & $\prepad \mathbf{00.0}_{\pm0.0}$  &  $\prepadmini \mathbf{0}_{\pm0}$ & $\prepad \mathbf{0.0}_{\pm0.0}$ \\
+\hline \hline
+\end{tabular}
+\vspace{0.2cm}
+\caption{\color{red}Retrieval using sentences and videos on the MSR-VTT dataset. R$@$k denotes recall$@$k (higher is better), MdR and MnR denote median rank and mean rank resp. (lower is better). 1k-A and 1k-B denote test sets of 1000 randomly sampled text-video pairs used by~\cite{yu2018joint} and~\cite{miech2018learning} resp.  We report standard deviations from three randomly seeded runs.  $\ddagger$~Updated code-base released by Miech et al.~\cite{miech2018learning} which achieves stronger results. For reference: JSFusion~\cite{yu2018joint}, MoEE~\cite{miech2018learning}, VSE~\cite{mithun2018learning}, VSE++ \cite{mithun2018learning}, W2VV~\cite{dong2018predicting}, Dual Encoding~\cite{dong2018dual} \color{black}}
+\label{table:MSRVTT} 
+\end{table*}
+
+\normalsize

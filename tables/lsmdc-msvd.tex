@@ -1,0 +1,58 @@
+\begin{table*}[ht]
+\centering 
+\begin{minipage}{0.45\linewidth}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\hspace{-5em}
+\begin{tabular}{l | c c c c }
+\hline \hline
+\multicolumn{1}{c}{} & 
+\multicolumn{4}{c}{Text $\implies$ Video} \\
+Method & R$@$1 & R$@$5 & R$@$10 & MdR  \\ 
+\hline 
+Yu et al.$\dagger$ &3.6 & 14.7 & 23.9 & 50 \\
+CCA  &7.5 & 21.7 & 31.0 & 33  \\
+JSFusion $\ddagger$  & 9.1 & 21.2 & 34.1 & 36  \\
+MoEE &  11.6 & 28.0 & 37.6 & 22   \\
+$\text{MoEE}_\text{COCO}$ &  12.7 & 28.9 & 39.6 & 21   \\
+\textbf{CE}  & $\prepad 12.6_{\pm0.8}$ & $\prepad 31.0_{\pm0.6}$ & $\prepad 40.3_{\pm0.5}$ & $\hspace{0.8em} 19_{\pm0}$  \\
+\hline
+No-CMF & \prepad 15.0_{\pm0.2} & \prepad 32.5_{\pm0.6} & \prepad 42.9_{\pm0.8} & \prepad 16.0_{\pm0.0} \\
+CMF-pairwise & \prepad 17.2_{\pm0.4} & \prepad 37.6_{\pm0.6} & \prepad 48.9_{\pm0.7} & \prepad 11.3_{\pm0.6} \\
+CMF-pairwise-star & \prepad 16.7_{\pm0.1} & \prepad 37.5_{\pm1.0} & \prepad 48.3_{\pm0.7} & \prepad 11.3_{\pm0.6} \\
+CMF-triplet & \prepad 17.8_{\pm1.2} & \prepad 37.7_{\pm1.4} & \prepad 47.9_{\pm1.2} & \prepad 12.0_{\pm1.0} \\
+CMF-pairwise-star+ & \prepad 17.9_{\pm1.2} & \prepad 38.4_{\pm0.5} & \prepad 48.6_{\pm0.9} & \prepad 11.3_{\pm0.6} \\
+\hline \hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+\centering 
+\footnotesize
+% \setlength{\tabcolsep}{4pt}
+\begin{tabular}{l | c c c c c } 
+\hline \hline
+\multicolumn{1}{c}{} & 
+\multicolumn{5}{c}{Text $\implies$ Video}  \\
+Method & R$@$1 & R$@$5 & R$@$10 & MdR & MnR  \\ 
+\hline 
+CCA  & - & - & - & - & 245.3  \\
+JMDV  & - & - & - & - & 236.3  \\
+VSE  & 12.3 & 30.1 & 42.3 & 14 & 57.7 \\
+VSE++ & 15.4 & 39.6 & 53.0 & 9 & 43.8 \\
+Multi. Cues  & 20.3 & 47.8 & 61.1 & $\textbf{6}$ & 28.3 \\
+
+CE  & $\prepad 20.9_{\pm0.5}$ & $\prepad 49.7_{\pm0.4}$ & $\prepad 63.8_{\pm0.4}$ & $\prepad 5.7_{\pm0.6}$ & $\prepad 19.5_{\pm0.9}$ \\
+\hline
+% (No CMF) & \prepad 15.0_{\pm0.2} & \prepad 32.5_{\pm0.6} & \prepad 42.9_{\pm0.8} & \prepad 69.2_{\pm0.8} & \prepad 16.0_{\pm0.0} & \prepad 56.8_{\pm0.2} & \prepad 19.0_{\pm0.2} & \prepad 39.5_{\pm0.9} & \prepad 50.0_{\pm1.1} & \prepad 77.9_{\pm0.8} & \prepad 10.7_{\pm0.6} & \prepad 35.1_{\pm0.7}
+
+% CE & $\prepad 00.0_{\pm0.0}$ & $\prepad 00.0_{\pm0.0}$ & $\prepad 00.0_{\pm0.0}$ & $\prepad 0.0_{\pm0.0}$ & $\prepad 00.0_{\pm0.0}$ \\
+% AHOI  & $\prepad 00.0_{\pm0.0}$ & $\prepad 00.0_{\pm0.0}$ & $\prepad 00.0_{\pm0.0}$ & $\prepad 0.0_{\pm0.0}$ & $\prepad 00.0_{\pm0.0}$ \\
+\hline
+CMF & (still cooking) & & & \\
+\hline \hline
+\end{tabular}
+\end{minipage}
+\vspace{0.2cm}
+\caption{\color{red}Text-to-Video retrieval results on the LSMDC dataset (left) and the MSVD dataset (right). $\dagger,\ddagger$ denote the winners of the 2016 and 2017 LSMDC challenges, respectively. For reference: MoEE and CCA~\cite{miech2018learning}, JSFusion~\cite{yu2018joint}, JMDV, CCA (right)~\cite{xu2015jointly}, Yu et al.~\cite{yu2016video}, VSE \cite{kiros2014unifying} (\cite{mithun2018learning}), VSE++ \cite{faghri2017vse} (\cite{mithun2018learning}), Multi. Cues \cite{mithun2018learning}  \color{black}}
+\label{table:LSMDC-MSVD} 
+\end{table*}

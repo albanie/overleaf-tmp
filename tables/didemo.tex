@@ -1,0 +1,26 @@
+\begin{table*}[h!]
+\centering 
+\footnotesize 
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{l | c c c c c | c c c c c} 
+\hline \hline
+\multicolumn{1}{c}{} & 
+\multicolumn{5}{c}{Text $\implies$ Video} & \multicolumn{5}{c}{Video $\implies$ Text} \\
+Method & R$@$1 & R$@$5 & R$@$50 & MdR & MnR & R$@$1 & R$@$5 & R$@$50 & MdR & MnR \\ 
+\hline 
+S2VT  & 11.9 & 33.6 & 76.5 & 13 & - & 13.2 & 33.6 & 76.5 & 15 & - \\
+FSE & $\prepad 13.9_{\pm0.7}$ & $\prepad 36_{\pm0.8}$ & $\prepad {78.9}_{\pm 1.6}$ & $11$ & - & $\prepad {13.1}_{\pm0.5}$ & $\prepad {33.9}_{\pm0.4}$ & $\prepad 78.0_{\pm0.8}$ & $12$ &  - \\
+CE & $\prepad 22.6_{\pm0.5}$ & $\prepad 51.1_{\pm1.0}$ & $\prepad 87.3_{\pm0.3}$ & $\hspace{1em} 5_{\pm0}$ & $\prepad 27.4_{\pm1.1}$ & $\prepad 22.5_{\pm1.3}$ & $\prepad 52.3_{\pm0.8}$ & $\prepad 89.2_{\pm0.8}$ & $\hspace{1em} 5_{\pm0}$ & $\prepad 23.2_{\pm1.1}$ \\
+\hline
+% CMF-pairwise-star & $\prepad 25.0_{\pm0.7}$ & $\prepad 54.8_{\pm0.4}$ & $\prepad 91.0_{\pm1.3}$ & $\prepad 4.3_{\pm0.6}$ & $\prepad 17.3_{\pm0.5}$ & $\prepad 24.4_{\pm1.0}$ & $\prepad 55.2_{\pm1.4}$ & $\prepad 93.7_{\pm0.4}$ & $\prepad 4.0_{\pm0.0}$ & $\prepad 14.0_{\pm0.4}$ \\
+% CMF-pairwise-noMOE & $\prepad 25.4_{\pm1.3}$ & $\prepad 54.5_{\pm0.4}$ & $\prepad 91.8_{\pm0.3}$ & $\prepad 4.3_{\pm0.6}$ & $\prepad 17.1_{\pm0.3}$ & $\prepad 25.1_{\pm0.8}$ & $\prepad 56.1_{\pm1.0}$ & $\prepad 93.4_{\pm0.8}$ & $\prepad 4.0_{\pm0.0}$ & $\prepad 14.0_{\pm0.5}$ \\
+CMF-pairwise-star-tensor & $\prepad 25.4_{\pm0.4}$ & $\prepad 54.2_{\pm0.3}$ & $\prepad 91.6_{\pm0.7}$ & $\prepad 4.7_{\pm0.6}$ & $\prepad 17.3_{\pm0.9}$ & $\prepad 25.4_{\pm1.2}$ & $\prepad 56.0_{\pm0.4}$ & $\prepad 93.8_{\pm1.1}$ & $\prepad 4.0_{\pm0.0}$ & $\prepad 14.0_{\pm0.6}$ \\
+% CMF-triplet & $\prepad 24.6_{\pm0.7}$ & $\prepad 55.0_{\pm0.9}$ & $\prepad 91.7_{\pm0.6}$ & $\prepad 4.3_{\pm0.6}$ & $\prepad 16.7_{\pm0.8}$ & $\prepad 26.1_{\pm0.6}$ & $\prepad 56.0_{\pm2.0}$ & $\prepad 93.6_{\pm0.8}$ & $\prepad 4.3_{\pm0.6}$ & $\prepad 13.7_{\pm0.8}$ \\
+% CMF-pairwise-star-avgmax & $\prepad 24.2_{\pm0.5}$ & $\prepad 55.0_{\pm0.6}$ & $\prepad 91.8_{\pm0.4}$ & $\prepad 4.3_{\pm0.6}$ & $\prepad 16.8_{\pm0.4}$ & $\prepad 25.6_{\pm0.9}$ & $\prepad 55.5_{\pm1.4}$ & $\prepad 93.8_{\pm0.4}$ & $\prepad 4.3_{\pm0.6}$ & $\prepad 14.1_{\pm0.4}$ \\
+% CMF-pairwise-star-random & $\prepad 15.9_{\pm8.5}$ & $\prepad 37.5_{\pm12.8}$ & $\prepad 80.5_{\pm9.3}$ & $\prepad 11.3_{\pm5.5}$ & $\prepad 36.5_{\pm15.2}$ & $\prepad 15.1_{\pm10.0}$ & $\prepad 36.6_{\pm15.2}$ & $\prepad 80.0_{\pm11.1}$ & $\prepad 12.3_{\pm7.2}$ & $\prepad 38.1_{\pm20.7}$ \\
+
+\hline \hline
+\end{tabular}
+\caption{\color{red}Paragraph-video retrieval comparison of  methods trained with video-level information on the DiDeMo benchmark. For reference: SV2T~\cite{venugopalan2014translating} (\cite{zhang2018cross}), FSE~\cite{zhang2018cross}\color{black}}
+\label{table:DiDeMo} 
+\end{table*}

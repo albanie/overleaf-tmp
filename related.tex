@@ -1,0 +1,25 @@
+\section{Related Work}
+
+\subsection{Multi-Modal Embedding for Video Understanding}
+
+Multi-modal embedding focuses on using various modalities of the sensory signal to improve the performance of a specific task. Most state-of-the-art video representations \cite{feichtenhofer2016convolutional,feichtenhofer2017spatiotemporal,simonyan2014two,miech2017learnable,wang2016temporal} separate videos into multiple stream of modalities. The appearance and motion features  \cite{feichtenhofer2016convolutional,simonyan2014two,carreira2017quo,girdhar2017actionvlad,varol2017long} capturing visual cues and audio signal \cite{miech2017learnable,monfortmoments} are the commonly used video modalities. Most recently, \cite{miech2018learning,liu2019use} leverage and combine additional cues from the video and learn the joint embedding using the context gating mechanisms. These literature has consistently demonstrated the benefits of combining different video modalities for video understanding. Similar to previous work in video understanding, our model combines multiple modalities but make it more compact to enable efficient storage and retrieval for very large-scale datasets. The proposed approach can be easily generalised a large number of modalities to leverage the rich and varied multi-modality information in video, including some fine-grained information, i.e., face, speech, OCR, etc. 
+
+% \subsection{Action Recognition and VideO Retrieval}
+% For video understanding applications, a large number of existing works focused on aggregation of single modality representations over time\cite{}, however, they ignored to leverage the rich and varied multi-modality information in video, including motion cues, speech, OCR information etc.   
+
+% More recently, \cite{monfortmoments} attempted to fuse the multi-modality features in video by ensembling the top performing model of each modality and feature concatenation. However, the relationships among multi-modality data have not been fully explored. To utilise the expert model of each single modality, \cite{miech2018learning} proposed to learn a joint embedding built on the conventional Mixtures-of-Experts model \cite{}. The later extension \cite{liu2019use} 
+
+% learn a joint embedding exploiting the complementary and redundant information from the heterogeneous modalities. 
+% % how to represent and summarise multi-modal data in a way that exploits the complementarity and redundancy of multiple modalities. 
+% A range of prior work has proposed to jointly embed images and text into the same space [17, 18, 19, 28, 38], enabling cross-modal retrieval. 
+% More recently, several works have also focused on audio-visual cross-modal embeddings [2, 37], as well as audio-text embeddings [7]. Our goal in this work, however, is to embed videos and natural language sentences (sometimes multiple sentences) into the same semantic space, which is made more challenging by the high dimensional content of videos.
+
+\subsection{Action Recognition and Video-Text Retrieval}
+There exists a range of works focusing on video-text retrieval, they either chose to learn spatial-temporal visual features only \cite{otani2016learning,dong2016word2visualvec} or adopted to learn the joint embedding from multi-modality signals \cite{miech2018learning,liu2019use,mithun2018learning}. However, our method investigates the efficient architectures to combine multi-modality features for video-text retrieval task. 
+
+Recent work on action recognition first learn compact representations across time or modalities and then perform various aggregation methods for the recognition. Another line of work \cite{wang2018videos,ma2018attend} focused more on modelling the relationship or interactions between different object instances in space and time. These methods only explored only spatial-temporal and audio features using the conventional classification formulation. However, our method attempts to utilize the powerful multi-modality joint embedding and reformulate the action recognition problem using the video-text retrieval method.
+ 
+
+
+
+

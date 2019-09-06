@@ -1,0 +1,25 @@
+\begin{table*}[h]
+% \captionsetup{font=footnotesize}
+\centering 
+\footnotesize 
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{l | c c c c c | c c c c c} 
+\hline \hline 
+\multicolumn{1}{c}{} & 
+\multicolumn{5}{c}{Text $\implies$ Video} & \multicolumn{5}{c}{Video $\implies$ Text} \\
+Method & R$@$1 & R$@$5 & R$@$50 & MdR & MnR & R$@$1 & R$@$5 & R$@$50 & MdR & MnR \\ 
+
+\hline
+CMF-pairwise & $\prepad 31.6_{\pm0.3}$ & $\prepad 67.2_{\pm0.2}$ & $\prepad 97.0_{\pm0.2}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.9_{\pm0.1}$ & $\prepad 32.0_{\pm0.4}$ & $\prepad 68.9_{\pm1.1}$ & $\prepad 97.1_{\pm0.3}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.5_{\pm0.4}$ \\
+CMF-pairwise-star & $\prepad 31.7_{\pm0.5}$ & $\prepad 66.9_{\pm0.6}$ & $\prepad 96.7_{\pm0.3}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 10.0_{\pm0.3}$ & $\prepad 32.7_{\pm0.4}$ & $\prepad 69.2_{\pm0.8}$ & $\prepad 96.9_{\pm0.1}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.4_{\pm0.3}$ \\
+CMF-pairwise-star-tensor & $\prepad 32.3_{\pm0.3}$ & $\prepad 67.6_{\pm0.3}$ & $\prepad 97.2_{\pm0.1}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.50_{\pm0.2}$ & $\prepad 33.5_{\pm0.7}$ & $\prepad 69.2_{\pm1.2}$ & $\prepad 97.4_{\pm0.1}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 8.9_{\pm0.6}$ \\
+CMF-triplet & $\prepad 30.5_{\pm0.2}$ & $\prepad 66.5_{\pm0.7}$ & $\prepad 96.8_{\pm0.1}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.8_{\pm0.2}$ & $\prepad 32.0_{\pm1.4}$ & $\prepad 67.5_{\pm0.8}$ & $\prepad 96.8_{\pm0.4}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.4_{\pm0.6}$ \\
+% CMF-pairwise-star-random & $\prepad 27.4_{\pm0.7}$ & $\prepad 62.6_{\pm1.4}$ & $\prepad 96.1_{\pm0.1}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 11.3_{\pm0.3}$ & $\prepad 29.6_{\pm0.6}$ & $\prepad 65.5_{\pm1.0}$ & $\prepad 96.8_{\pm0.1}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 10.2_{\pm0.2}$ \\
+CMF-pairwise-star-specific & $\prepad 31.1_{\pm0.7}$ & $\prepad 65.9_{\pm1.4}$ & $\prepad 96.8_{\pm0.1}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 10.1_{\pm0.3}$ & $\prepad 31.9_{\pm0.6}$ & $\prepad 67.6_{\pm1.0}$ & $\prepad 96.9_{\pm0.1}$ & $\prepad 3.0_{\pm0.0}$ & $\prepad 9.5_{\pm0.2}$ \\
+
+\hline \hline
+\end{tabular}
+% \vspace{0.3cm}
+\caption{\color{red}Comparison of paragraph-video retrieval methods trained with video-level information on the ActivityNet-captions dataset (val1 test-split). For reference: LSTM-YT~\cite{venugopalan2015sequence} (\cite{zhang2018cross}), NOCTXT~\cite{venugopalan2014translating} (\cite{zhang2018cross}), HSE(4SEGS)~\cite{zhang2018cross}, DENSE~\cite{krishna2017dense}, FSE~\cite{zhang2018cross} \color{black}}
+\label{table:activity-net} 
+\end{table*}

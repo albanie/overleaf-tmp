@@ -1,0 +1,108 @@
+\section{Introduction}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{example-image-a}
+    \caption{\textbf{The Cross-Modal Filter}: Ambiguities in one sensory signal are resolved by reference to other modalities.}
+    \label{fig:my_label}
+\end{figure}
+
+
+The objective of this work is video representation---we seek to
+compress the content of a video clip into an embedding that enables
+retrieval and content classification.  For practical usage, an
+effective video representation has two key desiderata: (1) it should
+be \textit{discriminative} for the task of interest; and (2) it should be
+\textit{compact} to enable efficient storage and retrieval for very large-scale data sets.  In this
+work, we develop a neural  architecture that meets both objectives.  At the
+core of our method is a technique we term \textit{Cross-Modal
+Enhancement}, a learnable mechanism for exploiting contextual
+information from a collection of modality signals to render them
+maximally discriminative for a given objective.  The design use of such a technique is motivated by the following hypothesis: \textit{information
+provided by a single modality signal exhibits ambiguity which
+may only be resolved through its combination with other 
+signals}.  
+
+The task of text-video retrieval requires a system to rank a
+collection of videos according to how well they match a given text
+query.  Joint video-text embeddings (which seek to map videos and text
+descriptions into a common space such that matching video and text
+pairs are close together) form an attractive model for tackling this
+problem, since they readily allow for efficient indexing: compact
+video embeddings can be pre-computed and stored offline such that the
+test time query reduces to simple distance computation between
+embeddings. The distance computation can be carried out very efficiently
+and at large scale using approximate nearest neighbors (ANN)  methods.
+In turn, by requiring that the video and query-text embeddings are close,
+this model determines the loss for discriminatively training the video representation.
+Similarly,  the task of video content classification also determines a loss 
+for discriminatively training the video representation.
+
+We consider the multiple modalities and information sources that are
+available in a video clip. These include those available from the
+video stream, such as human actions and faces, the objects, animals,
+and scene-text, as well as the surrounding scene; and also those available
+from the audio stream, such as human speech and ambient sounds.
+The video representation must combine information from all of these sources and modalities in a discriminative
+and compact manner.
+
+The question then is: how should these multiple modalities be combined into the video-clip representation?
+In this work we build on the MoEE/CENet joint text-video embedding
+architecture initially proposed by \cite{miech2018learning} and
+recently extended by \cite{liu2019use}.  This architecture (henceforth
+referred to as CENet)  integrates the multiple modalities into a single video representation by computing 
+{\em all}  pairwise relations between modalities. With so many modalities, computing all pairwise relations becomes
+very expensive.
+
+In this paper we investigate other architectures for combining the multiple modalities. We
+ show that it is {\em not} necessary to compute all pairwise
+relations to produce an effective `Cross-Modal Filtering'; rather a simple star topology graph (comparing all
+modalities to a careful composed aggregate), not only significantly reduces the cost, but also leads to a more powerful representation.
+Indeed, we show that using this representation exceeds the state of the art performance on the benchmarks used
+by~\cite{miech2018learning} and~\cite{liu2019use}.
+
+In this paper we make the following contributions:
+\begin{enumerate}
+\item We develop and evaluate a novel Cross-Modal Filtering module for effectively composing streams for video representation.
+\item We present an efficient approximation to this scheme, suitable for the very-large scale video retrieval and 
+content classification  settings.
+\item We set a new state-of-the-art performance on four benchmarks for retrieval, as well as content classification 
+on the newly proposed Multi-Moments-In-Time dataset.
+\end{enumerate}
+
+% ** original text below here **
+% The objective of this work is video representation---we seek to compress the content of a video into an embedding that enables retrieval and content classification.  For practical usage, an effective video representation has two key desiderata: (1) it should be \textit{discriminative} for the task of interest; (2) it should be \textit{compact} to enable efficient storage and retrieval.  In this work, we develop an architecture that meets both objectives.   At the core of our method is a technique we term \textit{Cross-Modal Filtering}, a learnable mechanism for exploiting contextual information from a collection of sensory signals to render them maximally discriminative for a given objective.  The design of such a filter is motivated by the following hypothesis: \textit{information provided by a single modality sensory signal exhibits ambiguity which may only be resolved through its combination with other sensory signals}.  This ambiguity resolution requires the creation of representations that cannot exist at the level of individual sensors, necessitating the design of an appropriate integration system.  An example of this form of multi-modal integration can be found in the human vestibular system, in which the signal provided by the otolith organs (which detect linear acceleration) are necessarily combined with additional visual and/or semicircular canal cues to solve for transnational motion~\cite{green2010multisensory}.
+
+
+% \color{red}
+
+% \begin{itemize}
+%     \item The aim of this work is large scale video understanding
+%     \item We specifically focus on making good use of modalities in a manner that is practical for large scale systems
+%     \item We explore designs of cross-modal filters for fusing sensory signals appropriately
+%     \item We show that by including cross-modal filters in multi-modal video understanding systems, we can improve performance on multiple benchmarks. 
+% \end{itemize}
+
+% \color{black}
+
+
+
+% \color{red}
+% Motivating examples for video understanding tasks (could do with some upgrading later): 
+
+% \begin{itemize}
+%     \item We watch two humans talking, but it is only by understanding the content of their speech that we may hope to grasp the full nature of their interaction.
+%   \item We see a clip of a small gathering of people, but it is only reading the text on their placards that we realise that the scene depicts a political protest.
+%   \item We hear animal noises, but require visual cues to differentiate a zoo from the jungle or a veterinary office.
+% \end{itemize}
+
+% \color{black}
+
+% \color{red}
+% \begin{enumerate}
+% \item We develop and evaluate a novel Cross-Modal Filtering module for effectively composing streams for video representation.
+% \item We present an efficient approximation to this scheme, suitable for the very-large scale video understanding setting.
+% \item We set a new state-of-the-art performance on four benchmarks for retrieval, as well as on the newly proposed Multi-Moments-In-Time dataset.
+% \end{enumerate}
+% \color{black}
