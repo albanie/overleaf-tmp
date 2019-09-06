@@ -1,40 +1,33 @@
-\section{Experiments}
+\section{Experiments}\label{sec:experiments}
 
 
-In this section, we first evaluate the proposed CMF module on two tasks: text-video retrieval and very-large scale action recognition. Then we present an ablation study to explore how the performance of the proposed approach is affected by different CMF designs. 
-
-% In this section, We first provide the description of datasets, implementation details and evaluation metric used in two tasks. Then We evaluate the proposed CMF approach on four benchmarks for video retrieval and a large scale action recognition benchmark. Finally we present an ablation study to explore how the performance of the proposed approach is affected by different CMF designs. 
-
+In this section, we first evaluate the proposed CME module as part of the architectures described above for two tasks: text-video retrieval and very-large scale action recognition. We then conduct an ablation study to understand the contribution of different components of our model. how the performance of the proposed approach is affected by different CMF designs. 
 
 
 \subsection{Video Retrieval}
 
 \subsubsection{Dataset and Implementation Details}
 
-We perform experiments on four video datasets:  MSR-VTT~\cite{xu2016msr}, LSMDC~\cite{rohrbach2015dataset}, DiDeMo~\cite{anne2017localizing} and ActivityNet-captions~\cite{krishna2017dense}, covering a challenging set of domains which include videos from YouTube, personal collections and movies. 
-
-We begin by evaluating the module on standard text-video retrieval benchmarks.  \samsays{TODO: Add detailed dataset descriptions and evaluation protocols}
+We perform experiments on four video datasets for retrieval:  MSR-VTT, LSMDC, DiDeMo and ActivityNet-captions, each of which is described briefly below.
 
 
-\paragraph{ActivityNet-captions:} \cite{krishna2017dense} comprises a collection of 20k videos sourced from YouTube.  Each video is accompanied by a descriptive sentences, numbering 100k in total.  For fair comparison, we adopt the retrieval evaluations and protocols used in prior work \cite{zhang2018cross,liu2019use}, training up to 15 epochs on the training partition (10,009 videos in total) and evaluating on the larger \texttt{val1} (4,917 videos in total).  We report performance in Tab.~\ref{table:activity-net}.
+\paragraph{ActivityNet-captions:} \cite{krishna2017dense} consists of a collection of 20k videos sourced from YouTube.  Each video in the dataset is accompanied by a descriptive sentences, numbering 100k in total.  For fair comparison, we adopt the retrieval evaluations and protocols used in prior work \cite{zhang2018cross,liu2019use}, training up to 15 epochs on the training partition (10,009 videos in total) and evaluating on the larger \texttt{val1} (4,917 videos in total).  We compare to the strongest results reported in the literature in Tab.~\ref{table:activity-net}. We observe that the 
 
 
 \input{tables/activity-net.tex}
 
-\paragraph{DiDeMo:} \cite{anne2017localizing} consists of a set of personal videos, captured in a diverse array of visual settings (10,464 videos in total).  We follow prior work on \textit{video-level} text-video retrieval (we do not make use of timestamp information during training or testing).  We compare to competing methods in Tab.~\ref{table:DiDeMo}.  \samsays{We may need to report numbers on the DiDeMo val set for a fair comparison with CE.}
-
+\paragraph{DiDeMo:} \cite{anne2017localizing} consists of a set of personal videos, captured in a diverse array of visual settings (10,464 videos in total).  We follow prior work on \textit{video-level} text-video retrieval (we do not make use of timestamp information during training or testing).  We compare to the existing state-of-the-art in Tab.~\ref{table:DiDeMo}.
 
 \input{tables/didemo.tex}
 
-\paragraph{MSR-VTT:} \cite{xu2016msr} We report results in Tab.~\ref{table:MSRVTT}. 
+\paragraph{MSR-VTT:} \cite{xu2016msr} consists of videos sourced from YouTube paired with human-annotator captions, numbering 200k unique video-caption pairs in total. The dataset provides 6513 training, 497 validation and 2990 test videos.    We closely follow the evaluation protocol followed in \cite{liu2019use} to enable a fair comparison and report results in Tab.~\ref{table:MSRVTT}. 
 
 \input{tables/msrvtt.tex}
 
-\paragraph{LSMDC:} \cite{rohrbach2015dataset}.  We report results in Tab.~\ref{table:LSMDC-MSVD} (left)
+\paragraph{LSMDC:} \cite{rohrbach2015dataset} is a dataset collected using both movie scripts and transcribed DVS (descriptive video services that are provided for the visually impaired).  The dataset contains 118,081 short video clips in total. To compare with prior work, we report results in Tab.~\ref{table:LSMDC-MSVD}  on the 1000 video test set prescribed by the Large Scale Movie Description Challenge (LSMDC).
 
 \input{tables/lsmdc-msvd.tex}
 
-\paragraph{MSVD:} \cite{chen2011collecting}  We report results in Tab.~\ref{table:LSMDC-MSVD} (right)
 
 \subsection{Action Recognition}
 

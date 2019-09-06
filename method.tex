@@ -94,14 +94,17 @@ The task of text-video retrieval requires a system to rank a collection of video
 
 To assess the proposed CME approach, we adopt as a backbone the MoEE/CENet joint text-video embedding architecture proposed by \cite{miech2018learning} and extended more recently by \cite{liu2019use}.  In particular, the CENet architecture represents the state-of-the-art on several popular retrieval benchmarks.  Moreover, it utilises a particular form of \textit{pairwise} filtering to combine different signals of different modalities, making it an ideal starting point for our investigations.   We first briefly summarise the model, then describe the integration of CME as a component of the architecture.
 
-The MoEE/CENet architecture comprises two core elements: a video encoder and a text encoder, which are learned to map videos and text into a common space.  CENet derives its strong retrieval performance by composing together the embeddings of a diverse collection of ``experts'': these are machine perception models which have been pretrained for related tasks, but not directly for retrieval.  In particular, they use deep neural networks pretrained for classification on the ImageNet dataset~\cite{deng2009imagenet}, scene recognition on the Places dataset \cite{zhou2017places}, action recognition models pretrained on Kinetics~\cite{}
+The MoEE/CENet architecture comprises two core elements: a video encoder and a text encoder, which are learned to map videos and text into a common space.  The text encoder applies the NetVLAD operator \cite{arandjelovic2016netvlad} to pretrained word embeddings to produce a fixed length encoding of the text queries used to train and evaluate the model. CENet in particular derives its strong retrieval performance by composing together the embeddings of a diverse collection of ``experts'' to construct its video encoder: these are machine perception models which have been pretrained for related tasks, but not directly for retrieval.  In particular, they use deep neural networks pretrained for classification on the ImageNet dataset~\cite{deng2009imagenet} and scene recognition on the Places dataset \cite{zhou2017places}, I3D action recognition models pretrained on Kinetics~\cite{kay2017kinetics} and audio embeddings pretrained on YouTube8m \cite{hershey2017cnn}.  In addition, CENet also makes use of highly specific video cues, ranging from scene-text recognition to speech transcription models.  The collection of the predictions of each modality are then passed into a ``Collaborative Gating'' module, which fuses them to form the final video representation.  The similarity $s_i^j$ of the $i^{th}$ video, $\mathbf{v}_i$, and the and $j^{th}$ caption, $\mathbf{t}_j$, is then compute using the video and text encoders described above, as simply the cosine of the angle between the video and text encodings. To learn the parameters of the video encoder, a \textit{Bidirectional Max-margin Ranking Loss} is used.  This loss computes, for minibatches of corresponding video-text pairs $\{\mathbf{v}_i, \; \mathbf{t}_i\}_{i=1}^{N_B}$, the following quantity:
+
+
+\begin{align}
+    \mathcal{L}_{r} = \frac{1}{N_B} \sum_{i=1, j\neq i}^{N_B}  \text{max}(0, \; m + s_i^j - s_i^i) + \nonumber \\
+    \text{max}(0,\; m + s_j^i - s_i^i). \label{eqn:loss}
+\end{align}
+
+Here, $m$ denotes a constant hyperparameter and $N_B$ denotes the batch size.  A more comprehensive description of CENet can be found in \cite{liu2019use}. However, for our purposes, it is important to note that the Collaborative Gating module used in CENet admits a direct interpretation as a pairwise Cross Modal Enhancement operator (corresponding to architecture (a) in Fig.~\ref{fig_archi}), and we compare directly against it in Sec.~\ref{sec:experiments}.  
 
 
 \subsection{Action Recognition Model}
 
-\begin{figure*}
-    \centering
-    \includegraphics[width=\textwidth,height=2in]{example-image-a}
-    \caption{\textbf{The family of filter generation functions considered in this work}.}
-    \label{fig:reasoning}
-\end{figure*}
+In addition to text-video retrieval, we also consider the task of action recognition from videos. Similarly to text-video retrieval, it is natural to expect  that effective use of different sensory modalities from video data may play an important role in action recognition performance.  To obtain an action recognition architecture, we simply discard the text decoder from the text-video architecture describe above, retaining only the video encoder.   Since we focus on our attention on the task of multi-label action classification, we simply replace the max-margin ranking loss described above with an unweighted binary cross entropy loss that penalises the discrepancy between predicted action categories and ground truth labels.
